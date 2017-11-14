@@ -2929,8 +2929,8 @@ public class ConnectionQueryServicesImpl extends DelegateQueryServices implement
                     .asList(admin.listTables(QueryConstants.SYSTEM_SCHEMA_NAME + "\\..*"));
             List<String> tableNames = getTableNames(tables);
             if (tableNames.size() == 0) { return; }
-            if (tableNames.size() > 4) { throw new IllegalArgumentException(
-                    "Expected 4 system table only but found " + tableNames.size() + ":" + tableNames); }
+            //if (tableNames.size() > 4) { throw new IllegalArgumentException(
+            //        "Expected 4 system table only but found " + tableNames.size() + ":" + tableNames); }
             byte[] mappedSystemTable = SchemaUtil
                     .getPhysicalName(PhoenixDatabaseMetaData.SYSTEM_CATALOG_NAME_BYTES, props).getName();
             metatable = getTable(mappedSystemTable);
